@@ -1,0 +1,27 @@
+HTML Tags:
+1. <html>
+2. <head>
+3. <title>
+4. <body>
+5. <nav>
+6. <a>
+7. <div>
+8. <h1>
+9. <p>
+10. <button>
+
+CSS Properties Used:
+1. background-color
+2. font-family
+3. margin
+4. color
+5. text-align
+6. font-size
+7. padding
+8. font-weight
+
+JavaScript Usage:
+JavaScript is being used for interactivity of a button that displays a message when clicked, and for the dynamic behavior using a recurring interval log in the browser console.
+
+Bootstrap Usage:
+Bootstrap is being used to build a responsive navigation bar and layout that adapts automatically to mobile phones, tablets, and desktop screens
