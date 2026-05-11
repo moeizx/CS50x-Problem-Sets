@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 style="text-align:center;">Add Trade</h2>
+
+<div style="
+    display:flex;
+    justify-content:center;
+    margin-top:25px;
+">
+
+    <form method="POST" autocomplete="off" style="
+        width:100%;
+        max-width:600px;
+        background:#111827;
+        padding:28px;
+        border-radius:12px;
+        border:1px solid #1f2937;
+        box-sizing:border-box;
+    ">
+
+        <!-- autofill off -->
+        <input type="text" name="fakeusernameremembered" style="display:none;">
+        <input type="password" name="fakepasswordremembered" style="display:none;">
+
+        <!-- pair -->
+        <div style="margin-bottom:14px;">
+            <label style="display:block; margin-bottom:6px;">Pair</label>
+            <input type="text" name="pair" placeholder="e.g. EURUSD"
+            autocomplete="off"
+            style="
+                width:100%;
+                padding:10px;
+                background:#0b1220;
+                border:1px solid #1f2937;
+                color:white;
+                border-radius:8px;
+                box-sizing:border-box;
+            ">
+        </div>
+
+        <!-- entry/exit -->
+        <div style="display:flex; gap:14px; margin-bottom:14px;">
+
+            <div style="flex:1;">
+                <label style="display:block; margin-bottom:6px;">Entry Price</label>
+                <input type="number" step="0.0001" name="entry_price"
+                autocomplete="off"
+                style="
+                    width:100%;
+                    padding:10px;
+                    background:#0b1220;
+                    border:1px solid #1f2937;
+                    color:white;
+                    border-radius:8px;
+                    box-sizing:border-box;
+                ">
+            </div>
+
+            <div style="flex:1;">
+                <label style="display:block; margin-bottom:6px;">Exit Price</label>
+                <input type="number" step="0.0001" name="exit_price"
+                autocomplete="off"
+                style="
+                    width:100%;
+                    padding:10px;
+                    background:#0b1220;
+                    border:1px solid #1f2937;
+                    color:white;
+                    border-radius:8px;
+                    box-sizing:border-box;
+                ">
+            </div>
+
+        </div>
+
+        <!-- lot size -->
+        <div style="margin-bottom:14px;">
+            <label style="display:block; margin-bottom:6px;">Lot Size</label>
+            <input type="number" step="0.01" name="lot_size"
+            autocomplete="off"
+            style="
+                width:100%;
+                padding:10px;
+                background:#0b1220;
+                border:1px solid #1f2937;
+                color:white;
+                border-radius:8px;
+                box-sizing:border-box;
+            ">
+        </div>
+
+        <!-- trade type -->
+        <div style="margin-bottom:14px;">
+            <label style="display:block; margin-bottom:6px;">Trade Type</label>
+            <select name="trade_type" autocomplete="off"
+            style="
+                width:100%;
+                padding:10px;
+                background:#0b1220;
+                border:1px solid #1f2937;
+                color:white;
+                border-radius:8px;
+                box-sizing:border-box;
+            ">
+                <option>Buy</option>
+                <option>Sell</option>
+            </select>
+        </div>
+
+        <!-- strategy -->
+        <div style="margin-bottom:14px;">
+            <label style="display:block; margin-bottom:6px;">Strategy</label>
+            <input type="text" name="strategy"
+            autocomplete="off"
+            style="
+                width:100%;
+                padding:10px;
+                background:#0b1220;
+                border:1px solid #1f2937;
+                color:white;
+                border-radius:8px;
+                box-sizing:border-box;
+            ">
+        </div>
+
+        <!-- emotion -->
+        <div style="margin-bottom:14px;">
+            <label style="display:block; margin-bottom:6px;">Emotion</label>
+            <input type="text" name="emotion"
+            autocomplete="off"
+            style="
+                width:100%;
+                padding:10px;
+                background:#0b1220;
+                border:1px solid #1f2937;
+                color:white;
+                border-radius:8px;
+                box-sizing:border-box;
+            ">
+        </div>
+
+        <!-- notes -->
+        <div style="margin-bottom:18px;">
+            <label style="display:block; margin-bottom:6px;">Notes</label>
+            <textarea name="notes" rows="4"
+            autocomplete="off"
+            style="
+                width:100%;
+                padding:10px;
+                background:#0b1220;
+                border:1px solid #1f2937;
+                color:white;
+                border-radius:8px;
+                box-sizing:border-box;
+                resize:none;
+            "></textarea>
+        </div>
+
+        <!-- button -->
+        <button type="submit" style="
+            width:100%;
+            padding:12px;
+            background:#2563eb;
+            border:none;
+            border-radius:8px;
+            color:white;
+            font-weight:bold;
+            cursor:pointer;
+        ">
+            Add Trade
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trading Journal</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Inter, Arial, sans-serif;
+            background: #0b1220;
+            color: #e5e7eb;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 32px;
+            background: rgba(15, 23, 42, 0.85);
+            border-bottom: 1px solid #1f2937;
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .brand {
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 18px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 14px;
+            color: #9ca3af;
+            padding: 6px 10px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: white;
+            background: #1f2937;
+        }
+
+        .nav-links a.active {
+            color: white;
+            background: #2563eb;
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            background: #111827;
+            padding: 18px;
+            border-radius: 12px;
+            border: 1px solid #1f2937;
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 13px;
+            color: #9ca3af;
+        }
+
+        .card p {
+            margin: 10px 0 0;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #111827;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #1f2937;
+            text-align: left;
+            font-size: 13px;
+            color: white; 
+        }
+
+        th {
+            color: white; 
+            font-weight: 500;
+        }
+
+        tr:hover {
+            background: #1f2937;
+        }
+
+        a.button {
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+
+        .edit {
+            color: white;
+        }
+
+        .delete {
+            color: white;
+        }
+
+        .notes {
+            max-width: 250px;
+            max-height: 80px;
+            overflow-y: auto;
+            white-space: normal;
+            word-wrap: break-word;
+            display: block;
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <div class="brand">
+        Trading Journal
+    </div>
+
+    <div class="nav-links">
+        <a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a>
+        <a href="/add" class="{% if request.path == '/add' %}active{% endif %}">Add Trade</a>
+        <a href="/history" class="{% if request.path == '/history' %}active{% endif %}">History</a>
+    </div>
+
+</div>
+
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Dashboard</h2>
+
+<div class="grid">
+
+    <div class="card">
+        <h3>Total Trades</h3>
+        <p>{{ total_trades }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Wins</h3>
+        <p>{{ wins }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Losses</h3>
+        <p>{{ losses }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Win Rate</h3>
+        <p>{{ win_rate }}%</p>
+    </div>
+
+</div>
+
+<h2 style="margin-top:40px;">Strategy Performance</h2>
+
+<table>
+
+    <tr>
+        <th>Strategy</th>
+        <th>Total Trades</th>
+        <th>Win Rate</th>
+    </tr>
+
+    {% for s in strategy_stats %}
+    <tr>
+        <td>{{ s.strategy }}</td>
+        <td>{{ s.total }}</td>
+        <td>{{ s.win_rate }}%</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}
